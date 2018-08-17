@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.hy.demo_service">
+
+    <application
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme">
+        <activity android:name=".MainActivity">
+
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+
+        </activity>
+
+        //注册Service服务
+        <service android:name=".MyService1"></service>
+        <service android:name=".MyService2"></service>
+        <service android:name=".FrontService"></service>
+        <service android:name=".RemoteService"
+            android:exported="true"
+            >
+            <intent-filter>
+                <action android:name="com.hy.demo_service.AIDL_Service1"/>
+            </intent-filter>
+
+        </service>
+        <service android:name=".MyIntentService">
+            <intent-filter>
+                <action android:name="com.hy.intentservice"></action>
+            </intent-filter>
+
+        </service>
+
+    </application>
+
+</manifest>
